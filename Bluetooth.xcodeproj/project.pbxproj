@@ -14,6 +14,7 @@
 		BE445F78274382BB00BDEF37 /* BluetoothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE445F77274382BB00BDEF37 /* BluetoothViewController.swift */; };
 		BE445F7A274386AA00BDEF37 /* Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE445F79274386AA00BDEF37 /* Bluetooth.swift */; };
 		BE445FCE2744E11800BDEF37 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE445FCD2744E11800BDEF37 /* Model.swift */; };
+		BEDB78562754C54A000A5B9F /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDB78552754C54A000A5B9F /* List.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		BE445FCD2744E11800BDEF37 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BE445FCF2745FEA200BDEF37 /* Bluetooth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bluetooth.entitlements; sourceTree = "<group>"; };
 		BE445FD02746099000BDEF37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BEDB78552754C54A000A5B9F /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,15 +61,16 @@
 		BE445F6827434E0400BDEF37 /* Bluetooth */ = {
 			isa = PBXGroup;
 			children = (
+				BE445F6F27434E0700BDEF37 /* Preview Content */,
 				BE445FD02746099000BDEF37 /* Info.plist */,
 				BE445FCF2745FEA200BDEF37 /* Bluetooth.entitlements */,
 				BE445F6927434E0400BDEF37 /* BluetoothApp.swift */,
 				BE445F6B27434E0400BDEF37 /* ContentView.swift */,
 				BE445F6D27434E0700BDEF37 /* Assets.xcassets */,
-				BE445F6F27434E0700BDEF37 /* Preview Content */,
 				BE445F77274382BB00BDEF37 /* BluetoothViewController.swift */,
 				BE445F79274386AA00BDEF37 /* Bluetooth.swift */,
 				BE445FCD2744E11800BDEF37 /* Model.swift */,
+				BEDB78552754C54A000A5B9F /* List.swift */,
 			);
 			path = Bluetooth;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				BE445F78274382BB00BDEF37 /* BluetoothViewController.swift in Sources */,
 				BE445F7A274386AA00BDEF37 /* Bluetooth.swift in Sources */,
 				BE445F6A27434E0400BDEF37 /* BluetoothApp.swift in Sources */,
+				BEDB78562754C54A000A5B9F /* List.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

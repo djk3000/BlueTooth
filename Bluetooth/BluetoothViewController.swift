@@ -41,43 +41,54 @@ class BluetoothViewController: UIViewController,CBCentralManagerDelegate,CBPerip
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber)
     {
         if peripheral.name != nil{
-            if peripheral.name!.contains("RDLX6") {
-                
-                print("发现外设")
-                print("名字 \(peripheral.name)")
-                print("Rssi: \(RSSI)")
-                print("外设UUID-->",peripheral.identifier.uuidString,"service-->",peripheral.services)
-                print("advertisementData-->",advertisementData["kCBAdvDataLocalName"])
-                
-                guard RSSI.intValue<0 else{
-                    return
-                }
-                if advertisementData["kCBAdvDataLocalName"] != nil {
-                    deviceDict[advertisementData["kCBAdvDataLocalName"] as! String] = RSSI.intValue
-                }
-                //deviceDict[peripheral.name!] = RSSI.intValue
-                let values = deviceDict.sorted(by: {$0.1 > $1.1})
-                print(values.first?.key)
-                print(values)
-                
-                print("======================================")
-                model.name = values.first?.key
-                model.rssi = values.first?.value
-               
-                
-                //                print("peripheral.name = \(peripheral.name!)")
-                //                print("central = \(central)")
-                //                print("peripheral = \(peripheral)")
-                //                print("RSSI = \(RSSI)")
-                //                print("advertisementData = \(advertisementData)")
-                //                if  (peripheral.name?.contains("RDLX6"))! != false
-                //                {
-                //                    self.magager.stopScan()
-                //                    connectPeripheral = peripheral
-                //                    self.magager.connect(peripheral, options: nil)
-                //                }
+            //            if peripheral.name!.contains("RDLX6") {
+            
+            print("发现外设")
+            print("名字 \(peripheral.name)")
+            print("Rssi: \(RSSI)")
+            print("外设UUID-->",peripheral.identifier.uuidString,"service-->",peripheral.services)
+            print("advertisementData-->",advertisementData["kCBAdvDataLocalName"])
+            
+            guard RSSI.intValue<0 else{
+                return
             }
+            if advertisementData["kCBAdvDataLocalName"] != nil {
+                deviceDict[advertisementData["kCBAdvDataLocalName"] as! String] = RSSI.intValue
+            }
+            //deviceDict[peripheral.name!] = RSSI.intValue
+            let values = deviceDict.sorted(by: {$0.1 > $1.1})
+            print(values.first?.key)
+            print(values)
+            guard values.count>0 else{
+                return
+            }
+            print("======================================")
+            let dict = Dictionary(uniqueKeysWithValues: values)
+            model.dicString = dicValueString(dict)
+            model.dic = deviceDict
+            model.name = values.first?.key
+            model.rssi = values.first?.value
+            
+            
+            //                print("peripheral.name = \(peripheral.name!)")
+            //                print("central = \(central)")
+            //                print("peripheral = \(peripheral)")
+            //                print("RSSI = \(RSSI)")
+            //                print("advertisementData = \(advertisementData)")
+            //                if  (peripheral.name?.contains("RDLX6"))! != false
+            //                {
+            //                    self.magager.stopScan()
+            //                    connectPeripheral = peripheral
+            //                    self.magager.connect(peripheral, options: nil)
+            //                }
+            //            }
         }
+    }
+    
+    func dicValueString(_ dic:[String : Any]) -> String?{
+        let data = try? JSONSerialization.data(withJSONObject: dic, options: [])
+        let str = String(data: data!, encoding: String.Encoding.utf8)
+        return str
     }
     
     //外设链接成功
