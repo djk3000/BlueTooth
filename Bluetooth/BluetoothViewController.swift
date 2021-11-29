@@ -31,7 +31,7 @@ class BluetoothViewController: UIViewController,CBCentralManagerDelegate,CBPerip
     }
     
     func timerRefresh() {
-        Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { timer in
+        Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true) { timer in
             self.deviceDict.removeAll()
             self.magager.scanForPeripherals(withServices: nil, options: nil)
         }
@@ -54,6 +54,8 @@ class BluetoothViewController: UIViewController,CBCentralManagerDelegate,CBPerip
             }
             if advertisementData["kCBAdvDataLocalName"] != nil {
                 deviceDict[advertisementData["kCBAdvDataLocalName"] as! String] = RSSI.intValue
+            }else{
+                deviceDict[peripheral.name ?? "nil"] = RSSI.intValue
             }
             //deviceDict[peripheral.name!] = RSSI.intValue
             let values = deviceDict.sorted(by: {$0.1 > $1.1})

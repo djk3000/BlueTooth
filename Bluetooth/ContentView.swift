@@ -22,7 +22,7 @@ struct ContentView: View {
                     .foregroundColor(.black)
             }
             HStack{
-                Text("最近外设蓝牙：")
+                Text("信号最强外设蓝牙：")
                     .font(.system(size: 30))
                     .foregroundColor(.black)
                 Text(model.name ?? "nil")
