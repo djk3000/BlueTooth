@@ -1,0 +1,9 @@
+version: "Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)"
+options: "2c895cf7258331bd78fcb26112e3e3b47c59692778e8fa36b0244e3429dcf56d"
+build_start_time: [1637045229, 399315834]
+build_end_time: [1637045238, 650324821]
+inputs:
+  "/Users/ruanjianyingyongbu/Documents/DJK_TEST/Bluetooth/Bluetooth/Bluetooth.swift": [1637044236, 68815946]
+  "/Users/ruanjianyingyongbu/Documents/DJK_TEST/Bluetooth/Bluetooth/BluetoothApp.swift": [1637029508, 960276603]
+  "/Users/ruanjianyingyongbu/Documents/DJK_TEST/Bluetooth/Bluetooth/BluetoothViewController.swift": [1637045227, 167433738]
+  "/Users/ruanjianyingyongbu/Documents/DJK_TEST/Bluetooth/Bluetooth/ContentView.swift": [1637045027, 642384052]
